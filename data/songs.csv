@@ -9,3 +9,13 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22
 9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78
 10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35
+11,Concrete Crown,Verse Theory,hip hop,intense,0.84,94,0.52,0.86,0.08
+12,Moonlit Sonata Redux,Elara Quartet,classical,focused,0.22,66,0.38,0.20,0.97
+13,Dusty Backroads,Wyatt Hollow,country,happy,0.63,112,0.80,0.64,0.55
+14,Velvet Hours,Sienna Rae,r&b,moody,0.52,84,0.44,0.70,0.30
+15,Pulse Reactor,Kilowatt Kids,edm,intense,0.96,128,0.68,0.90,0.03
+16,Cedar and Smoke,The Pine Choir,folk,relaxed,0.31,96,0.62,0.45,0.91
+17,Iron Tide,Grimhollow,metal,intense,0.97,172,0.30,0.48,0.02
+18,Island Drift,Kofi Tide,reggae,chill,0.48,76,0.78,0.74,0.40
+19,Late Train Blues,Delta Marlow,blues,moody,0.44,70,0.33,0.50,0.68
+20,Fuego Nocturno,Luna Cortez,latin,happy,0.85,104,0.88,0.89,0.15
