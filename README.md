@@ -89,11 +89,61 @@ Because: mood match (+1.5), energy closeness (+1.24), valence closeness (+1.00)
 ```
 ## Experiments You Tried
 
-Use this section to document the experiments you ran. For example:
+Three Profile tests
 
-- What happened when you changed the weight on genre from 2.0 to 0.5
-- What happened when you added tempo or valence to the score
-- How did your system behave for different types of users
+
+=== High-Energy Pop ===
+
+Sunrise City - Score: 5.84
+Because: genre match (+2.0), mood match (+1.5), energy closeness (+1.38), valence closeness (+0.96)
+
+Rooftop Lights - Score: 4.78
+Because: related genre (+1.0), mood match (+1.5), energy closeness (+1.29), valence closeness (+0.99)
+
+Gym Hero - Score: 4.42
+Because: genre match (+2.0), energy closeness (+1.46), valence closeness (+0.97)
+
+Fuego Nocturno - Score: 3.84
+Because: mood match (+1.5), energy closeness (+1.42), valence closeness (+0.92)
+
+Dusty Backroads - Score: 3.59
+Because: mood match (+1.5), energy closeness (+1.09), valence closeness (+1.00)
+
+
+=== Chill Lofi ===
+
+Library Rain - Score: 6.00
+Because: genre match (+2.0), mood match (+1.5), energy closeness (+1.50), valence closeness (+1.00)
+
+Midnight Coding - Score: 5.85
+Because: genre match (+2.0), mood match (+1.5), energy closeness (+1.40), valence closeness (+0.96)
+
+Focus Flow - Score: 5.17
+Because: genre match (+2.0), related mood (+0.75), energy closeness (+1.42), valence closeness (+0.99)
+
+Spacewalk Thoughts - Score: 4.84
+Because: related genre (+1.0), mood match (+1.5), energy closeness (+1.40), valence closeness (+0.95)
+
+Coffee Shop Stories - Score: 4.11
+Because: related genre (+1.0), related mood (+0.75), energy closeness (+1.47), valence closeness (+0.89)
+
+
+=== Deep Intense Rock ===
+
+Storm Runner - Score: 5.90
+Because: genre match (+2.0), mood match (+1.5), energy closeness (+1.48), valence closeness (+0.92)
+
+Iron Tide - Score: 3.82
+Because: mood match (+1.5), energy closeness (+1.43), valence closeness (+0.90)
+
+Concrete Crown - Score: 3.76
+Because: mood match (+1.5), energy closeness (+1.38), valence closeness (+0.88)
+
+Pulse Reactor - Score: 3.66
+Because: mood match (+1.5), energy closeness (+1.44), valence closeness (+0.72)
+
+Gym Hero - Score: 3.61
+Because: mood match (+1.5), energy closeness (+1.48), valence closeness (+0.63)
 
 ---
 
