@@ -1,52 +1,28 @@
 # 🎧 Model Card: Music Recommender Simulation
 
-## 1. Model Name  
+## 1. Model Name
 
-Give your model a short, descriptive name.  
-Example: **VibeFinder 1.0**  
-
----
-
-## 2. Intended Use  
-
-Describe what your recommender is designed to do and who it is for. 
-
-Prompts:  
-
-- What kind of recommendations does it generate  
-- What assumptions does it make about the user  
-- Is this for real users or classroom exploration  
+**VibeMatch 1.0**
 
 ---
 
-## 3. How the Model Works  
+## 2. Intended Use
 
-Explain your scoring approach in simple language.  
-
-Prompts:  
-
-- What features of each song are used (genre, energy, mood, etc.)  
-- What user preferences are considered  
-- How does the model turn those into a score  
-- What changes did you make from the starter logic  
-
-Avoid code here. Pretend you are explaining the idea to a friend who does not program.
+VibeMatch suggests songs from a small catalog based on a user's taste profile: a favorite genre, a favorite mood, a target energy level, and a target valence (how positive the song feels). It assumes the user can describe their taste with those four things and that one profile is enough, so it has no listening history. This is a classroom project for learning how recommenders work. It is not meant for real users.
 
 ---
 
-## 4. Data  
+## 3. How the Model Works
 
-Describe the dataset the model uses.  
-
-Prompts:  
-
-- How many songs are in the catalog  
-- What genres or moods are represented  
-- Did you add or remove data  
-- Are there parts of musical taste missing in the dataset  
+Every song in the catalog gets a score out of 6.0 based on how well it matches the user's profile. A genre match is worth 2.0 points, and a related genre (like pop and indie pop) earns half. A mood match is worth 1.5, and a similar mood (like chill and relaxed) earns half. Energy is worth up to 1.5 points and valence up to 1.0, and the closer a song is to the user's target, the more points it gets. The songs are then sorted from highest score to lowest and the top five are shown, each with a short "Because" list explaining where its points came from. The starter code only had empty functions, so I wrote the file loading, the scoring rule, and the ranking. I added valence as a feature, partial credit for related genres and moods, and the explanations.
 
 ---
 
+## 4. Data
+
+The catalog has 20 songs. I started with 10 and used an AI assistant to add 10 more in different genres, so there are 17 genres in total, from pop, lofi, rock, and jazz to hip hop, classical, country, reggae, and Latin. The moods are happy, chill, relaxed, focused, moody, and intense. Most genres have only one song, and lofi is the only one with three. Each song also has tempo, danceability, and acousticness, but I didn't use them because they move almost in lockstep with energy. Taste factors like lyrics, language, artist familiarity, and the time of day aren't in the data at all.
+
+---
 ## 5. Strengths  
 
 Where does your system seem to work well  
