@@ -2,32 +2,7 @@
 
 ## Project Summary
 
-In this project you will build and explain a small music recommender system.
-
-Your goal is to:
-
-- Represent songs and a user "taste profile" as data
-- Design a scoring rule that turns that data into recommendations
-- Evaluate what your system gets right and wrong
-- Reflect on how this mirrors real world AI recommenders
-
-Replace this paragraph with your own summary of what your version does.
-
----
-
-## How The System Works
-
-Explain your design in plain language.
-
-Some prompts to answer:
-
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
-
-You can include a simple diagram or bullet list if helpful.
+What my version does essentially is it recommends music in an optimal way based off of genre, mood, energy, and valence. What my version does it assigns a weight to each one of those 4 and then basically give each song a score based off how it stacks up. For example a song can end with a score of 3.75 after having mood match = 1.5 points, energy closeness = 1.24 points, and valence closeness = 1.00 point. 
 
 ## How The System Works
 
@@ -35,7 +10,7 @@ Real recommendation systems like Spotify and YouTube use two main approaches: co
 
 ### Features
 - **Song:** genre, mood, energy, valence
-- **UserProfile:** favorite_genre, favorite_mood, target_energy, target_valence
+- **User taste profile (a dictionary in main.py):** genre, mood, energy, valence
 
 I originally picked tempo, but Copilot showed that tempo, acousticness, and danceability all move almost in lockstep with energy (tempo and energy correlate at 0.96). Using them would count the same signal twice, so I dropped them. Valence is the one numeric feature that captures something different.
 
@@ -50,9 +25,10 @@ The recommender scores every song in the catalog, sorts from highest to lowest, 
 
 ### Expected Biases
 - Genre has the highest weight, so the system may over-prioritize genre and ignore great songs that match the user's mood.
-- Valence only ranges from about 0.48 to 0.84 in my data, so it barely changes the ranking.
+- Valence only ranges from about 0.33 to 0.88 in my data, so it barely changes the ranking.
 - Most genres only have one song, so genre alone can't fill a top-5 list.
 - Content-based systems tend to create a filter bubble of more of the same.
+
 ---
 
 ## Getting Started
@@ -65,7 +41,7 @@ The recommender scores every song in the catalog, sorts from highest to lowest, 
    python -m venv .venv
    source .venv/bin/activate      # Mac or Linux
    .venv\Scripts\activate         # Windows
-
+   ```
 2. Install dependencies
 
 ```bash
@@ -91,22 +67,26 @@ You can add more tests in `tests/test_recommender.py`.
 ---
 
 ## Sample Recommendation Output
-
-Paste a sample of your recommender's output here as a text block so a reader can see what it produces:
-
 ```
-# e.g.:
-# User profile: genre=indie, mood=chill, energy=low
-# Recommendations:
-#   1. ...
-#   2. ...
-#   3. ...
+User profile: genre = pop, mood = happy, energy = 0.8, valence = 0.8
+
+Top recommendations:
+
+Sunrise City - Score: 5.93
+Because: genre match (+2.0), mood match (+1.5), energy closeness (+1.47), valence closeness (+0.96)
+
+Rooftop Lights - Score: 4.93
+Because: related genre (+1.0), mood match (+1.5), energy closeness (+1.44), valence closeness (+0.99)
+
+Gym Hero - Score: 4.27
+Because: genre match (+2.0), energy closeness (+1.30), valence closeness (+0.97)
+
+Fuego Nocturno - Score: 3.84
+Because: mood match (+1.5), energy closeness (+1.43), valence closeness (+0.92)
+
+Dusty Backroads - Score: 3.75
+Because: mood match (+1.5), energy closeness (+1.24), valence closeness (+1.00)
 ```
-
-**Screenshot or video** *(optional)*: <!-- Insert a screenshot or demo video link here -->
-
----
-
 ## Experiments You Tried
 
 Use this section to document the experiments you ran. For example:
