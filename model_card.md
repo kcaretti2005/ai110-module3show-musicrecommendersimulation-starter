@@ -37,40 +37,18 @@ The biggest weakness I found is that the system treats users differently dependi
 
 ---
 
-## 7. Evaluation  
+## 7. Evaluation
 
-How you checked whether the recommender behaved as expected. 
-
-Prompts:  
-
-- Which user profiles you tested  
-- What you looked for in the recommendations  
-- What surprised you  
-- Any simple tests or comparisons you ran  
-
-No need for numeric metrics unless you created some.
+I tested three user profiles: High-Energy Pop (pop, happy, energy 0.9, valence 0.8), Chill Lofi (lofi, chill, energy 0.35, valence 0.6), and Deep Intense Rock (rock, intense, energy 0.92, valence 0.4). For each one I checked whether the top 5 matched what I would expect by ear and whether the "Because" reasons made sense. The biggest surprise was Storm Runner earning points in all four categories, which happened because my rock profile almost exactly matched its row in the data. I also expected Dusty Backroads to score higher for the pop profile, but it is a country song, so it cannot earn genre points and tops out at 4.0. Comparing profiles: High-Energy Pop and Chill Lofi had completely different results, with high-energy songs like Sunrise City for pop and low-energy songs like Library Rain for lofi, which makes sense because their energy targets are 0.9 and 0.35. Pop and Rock shared Gym Hero, because both profiles want high energy and Gym Hero is high energy with an intense mood. Lofi and Rock had no songs in common, as expected. As an experiment I halved the genre points and doubled the energy multiplier. It moved Fuego Nocturno above Gym Hero for the pop profile, but it also let an ambient song beat a lofi song for the lofi profile, so the change was different rather than clearly better.
 
 ---
 
-## 8. Future Work  
+## 8. Future Work
 
-Ideas for how you would improve the model next.  
-
-Prompts:  
-
-- Additional features or preferences  
-- Better ways to explain recommendations  
-- Improving diversity among the top results  
-- Handling more complex user tastes  
+If I kept developing this, the first thing I would do is add more songs per genre, because genres with only one song cause the unfair gap I saw between users like the lofi and rock listeners. Second, I would group every genre into related families, not just pop with indie pop and lofi with ambient and jazz, so related genres earn partial credit for all users. Third, I would add a diversity rule so the top 5 can't be filled with near-identical songs, which would also help with the filter bubble problem. I would also let a user list more than one favorite genre or mood to handle more complex tastes.
 
 ---
 
-## 9. Personal Reflection  
+## 9. Personal Reflection
 
-A few sentences about your experience.  
-
-Prompts:  
-
-- What you learned about recommender systems  
-- Something unexpected or interesting you discovered  
-- How this changed the way you think about music recommendation apps  
+I learned that recommenders turn data into predictions by comparing a song's attributes to what the user wants and turning each match into points, which gives every song a score that can be ranked. In my version, the four categories (genre, mood, energy, and valence) each add points, and sorting those scores produces the song rankings. Throughout this assignment it was clear that AI is a great tool that needs to be worked alongside rather than just left to do the work. For example, I first picked tempo as a category, but Claude's correlation check showed that it duplicates energy, so I switched to energy and added valence. I chose the weights genre 2.0, mood 1.5, energy 1.5, and valence 1.0, with partial credit for related categories. Something that surprised me was Storm Runner earning points in all four categories, and Dusty Backroads scoring far less than I expected because it is a country song and cannot earn genre points. Storm Runner finished far above every other rock song because my profile almost exactly matched it, which helped me see how a recommendation app could push certain songs heavily when they match a user's profile so well.

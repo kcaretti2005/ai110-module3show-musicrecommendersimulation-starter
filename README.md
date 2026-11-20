@@ -12,7 +12,7 @@ Real recommendation systems like Spotify and YouTube use two main approaches: co
 - **Song:** genre, mood, energy, valence
 - **User taste profile (a dictionary in main.py):** genre, mood, energy, valence
 
-I originally picked tempo, but Copilot showed that tempo, acousticness, and danceability all move almost in lockstep with energy (tempo and energy correlate at 0.96). Using them would count the same signal twice, so I dropped them. Valence is the one numeric feature that captures something different.
+I originally picked tempo, but Claude showed that tempo, acousticness, and danceability all move almost in lockstep with energy (tempo and energy correlate at 0.96). Using them would count the same signal twice, so I dropped them. Valence is the one numeric feature that captures something different.
 
 ### Algorithm Recipe
 Each song gets a score out of 6.0:
