@@ -151,28 +151,22 @@ Because: mood match (+1.5), energy closeness (+1.48), valence closeness (+0.63)
 
 ## Limitations and Risks
 
-Summarize some limitations of your recommender.
+- The catalog is tiny, with only 20 songs, and most genres have just one song, so users with rare tastes (like rock) get a sharp drop in quality after the first result.
+- Genre carries the highest weight, so a song can rank high on genre alone even when its mood doesn't fit, as with Gym Hero for the pop profile.
+- Valence only ranges from about 0.33 to 0.88, so it barely changes the ranking.
+- It doesn't understand lyrics, language, artist, or listening history, and it only handles one favorite genre and one favorite mood at a time.
 
-Examples:
-
-- It only works on a tiny catalog
-- It does not understand lyrics or language
-- It might over favor one genre or mood
-
-You will go deeper on this in your model card.
+See `model_card.md` for a deeper analysis.
 
 ---
 
 ## Reflection
 
-Read and complete `model_card.md`:
+## Reflection
 
-[**Model Card**](model_card.md)
+Building this showed me that a recommender turns data into predictions by comparing each song's attributes to what the user wants, turning each match into points, and ranking the scores. A simple weighted rule can still feel like a real recommendation, especially when every result comes with a "Because" explanation. It also taught me that AI is a tool to work alongside rather than just let run: Claude's correlation check caught that tempo duplicated energy, and I had to make the final decisions on features and weights myself.
 
-Write 1 to 2 paragraphs here about what you learned:
-
-- about how recommenders turn data into predictions
-- about where bias or unfairness could show up in systems like this
+Bias can show up in systems like this through the data and the weights. Users whose favorite genre has many songs get better lists than users whose genre has one, and a heavily weighted feature like genre can push one kind of song to the top. Real recommenders face the same issue at a much bigger scale.
 
 
 
