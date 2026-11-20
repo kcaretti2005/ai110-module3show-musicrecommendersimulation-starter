@@ -25,26 +25,15 @@ The catalog has 20 songs. I started with 10 and used an AI assistant to add 10 m
 ---
 ## 5. Strengths  
 
-Where does your system seem to work well  
+## 5. Strengths
 
-Prompts:  
-
-- User types for which it gives reasonable results  
-- Any patterns you think your scoring captures correctly  
-- Cases where the recommendations matched your intuition  
+The system works best when a user's taste is clear and the catalog has several songs that fit it. The Chill Lofi profile got excellent results, with Library Rain, Midnight Coding, and Focus Flow all at the top, and every one matched what I would have picked by ear. The partial credit also worked: for the High-Energy Pop profile, Rooftop Lights (indie pop) came in second behind Sunrise City because it earned related-genre credit plus a mood match. Because every score comes with a "Because" explanation, I could see exactly why each song ranked where it did and catch problems, like Gym Hero scoring well on genre alone.
 
 ---
 
-## 6. Limitations and Bias 
+## 6. Limitations and Bias
 
-Where the system struggles or behaves unfairly. 
-
-Prompts:  
-
-- Features it does not consider  
-- Genres or moods that are underrepresented  
-- Cases where the system overfits to one preference  
-- Ways the scoring might unintentionally favor some users  
+The biggest weakness I found is that the system treats users differently depending on how many songs of their genre are in the catalog. For the Chill Lofi profile the #1 and #2 songs are only 0.15 points apart (6.00 vs 5.85), but for Deep Intense Rock the gap is 2.08 points (5.90 vs 3.82). That is because rock has only one song, so none of the other songs earn genre or related-genre points, while lofi has three songs plus related genres (ambient and jazz) that earn partial credit. Genre also carries the biggest weight, so Gym Hero ranked above a happy-mood song for the pop profile on genre points alone. Valence only ranges from about 0.33 to 0.88, so it barely changes the ranking, and the system ignores things like lyrics, language, and artist.
 
 ---
 
