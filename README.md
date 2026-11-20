@@ -89,9 +89,11 @@ Because: mood match (+1.5), energy closeness (+1.24), valence closeness (+1.00)
 ```
 ## Experiments You Tried
 
-Three Profile tests
+### Three profile tests (original weights: genre 2.0, energy 1.5)
 
-
+### Experiment: weight shift
+I changed genre points from 2.0 to 1.0 and changed the energy multiplier from 1.5 to 3.0 . As a result, Fuego Nocturno moved from #4 to #3 for the High-Energy Pop profile. This made the recommendations different with mixed accuracy: it helped the High-Energy Pop profile by pushing Gym Hero below Fuego Nocturno, but it hurt the Chill Lofi profile because an ambient song (Spacewalk Thoughts) now beat a lofi song (Focus Flow). The top 5 all now get 2.6 to 3.0 energy points which means the system mostly finds songs with similar energy.
+```
 === High-Energy Pop ===
 
 Sunrise City - Score: 5.84
@@ -144,7 +146,7 @@ Because: mood match (+1.5), energy closeness (+1.44), valence closeness (+0.72)
 
 Gym Hero - Score: 3.61
 Because: mood match (+1.5), energy closeness (+1.48), valence closeness (+0.63)
-
+```
 ---
 
 ## Limitations and Risks
